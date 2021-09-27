@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activities.Welcome">
+
+    <RelativeLayout
+        android:id="@+id/WelcomeBack"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:background="#0583EA"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="20dp"
+            android:src="@drawable/group_36__2_" />
+
+        <TextView
+            android:id="@+id/tvHey"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="35dp"
+            android:layout_toEndOf="@+id/image"
+            android:fontFamily="@font/poppins_medium"
+            android:text="Hey Sofia"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvHey"
+            android:layout_marginStart="20dp"
+            android:layout_toEndOf="@+id/image"
+            android:fontFamily="@font/poppins_medium"
+            android:text="Welcome Back"
+            android:textColor="@color/white"
+            android:textSize="22sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/WelcomeBack"
+        android:layout_margin="10dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginEnd="4dp" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="20dp"
+        android:backgroundTint="#0583EA"
+        app:srcCompat="@android:drawable/ic_input_add" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/crdAddTaskView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_margin="@dimen/dp_10"
+        android:visibility="gone"
+        app:cardCornerRadius="@dimen/dp_10">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#E5FAF4"
+            android:orientation="vertical"
+            tools:context=".Activities.CreateTask">
+
+            <LinearLayout
+                android:id="@+id/lyChooseGoal"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:background="#0583EA"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="@dimen/dp_20"
+                    android:fontFamily="@font/poppins_medium"
+                    android:gravity="center"
+                    android:text="Create new task"
+                    android:textColor="@color/white"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="10dp"
+                android:text="Task Name"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+
+
+            <EditText
+                android:id="@+id/etTaskName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="30dp"
+                android:background="@drawable/dashes"
+                android:hint="Task Name"
+                android:padding="15dp"
+                android:textSize="15sp" />
+
+            <EditText
+                android:id="@+id/etDecs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dp_30"
+                android:background="@drawable/dashes"
+                android:hint="Description"
+                android:padding="15dp"
+                android:textSize="15sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <EditText
+                    android:id="@+id/etDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/dashes"
+                    android:hint="Enter Date"
+                    android:inputType="date"
+                    android:padding="15dp"
+                    android:textSize="15sp" />
+
+                <Space
+                    android:layout_width="10dp"
+                    android:layout_height="match_parent" />
+
+
+                <EditText
+                    android:id="@+id/etTime"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="30dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/dashes"
+                    android:hint="Enter Time"
+                    android:inputType="time"
+                    android:padding="15dp"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="10dp"
+                android:text="Set Priority"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <RadioGroup
+                android:id="@+id/radioGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <RadioButton
+                        android:id="@+id/high"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/dp_30"
+                        android:text="High Priority" />
+
+                    <RadioButton
+                        android:id="@+id/low"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="30dp"
+                        android:text="Low Priority" />
+
+                </LinearLayout>
+
+            </RadioGroup>
+
+            <RelativeLayout
+                android:id="@+id/deleteTaskLY"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_30"
+                android:visibility="gone">
+
+                <View
+                    android:id="@+id/view"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginStart="@dimen/dp_30"
+                    android:layout_marginEnd="@dimen/dp_30"
+                    android:background="#FFDF0B0B" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="@dimen/dp_30"
+                    android:drawableStart="@drawable/ic_baseline_delete_24"
+                    android:drawablePadding="@dimen/dp_20"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="Delete Task"
+                    android:textSize="25sp" />
+
+            </RelativeLayout>
+
+            <Button
+                android:id="@+id/btnAddTask"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_margin="40dp"
+                android:backgroundTint="#FB9F33"
+                android:fontFamily="@font/inder"
+                android:gravity="center"
+                android:text="Add Task"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>
